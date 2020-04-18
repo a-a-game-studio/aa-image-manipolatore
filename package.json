@@ -1,0 +1,28 @@
+{
+  "name": "@a-a-game-studio/aa-image-manipolatore",
+  "version": "1.0.0",
+  "description": "Обработка картинок на фронте для загрузке по base63",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "scripts": {
+    "release": "npm run build:dev && npm run build:prod",
+    "build": "tsc",
+    "test": "tsc && node ./lib/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-a-game-studio/aa-image-manipolatore.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a-a-game-studio/aa-image-manipolatore/issues"
+  },
+  "homepage": "https://github.com/a-a-game-studio/aa-image-manipolatore#readme",
+  "dependencies": {
+    "typescript": "^3.8.3"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
