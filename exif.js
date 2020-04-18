@@ -1,8 +1,4 @@
-
-
-export const EXIF = {
-
-} 
+(function() {
 
     var debug = false;
 
@@ -12,7 +8,16 @@ export const EXIF = {
         if (obj instanceof EXIF) return obj;
         if (!(this instanceof EXIF)) return new EXIF(obj);
         this.EXIFwrapped = obj;
-    };   
+    };
+
+    if (typeof exports !== 'undefined') {
+        if (typeof module !== 'undefined' && module.exports) {
+            exports = module.exports = EXIF;
+        }
+        exports.EXIF = EXIF;
+    } else {
+        root.EXIF = EXIF;
+    }
 
     var ExifTags = EXIF.Tags = {
 
@@ -1045,6 +1050,10 @@ export const EXIF = {
         return findEXIFinJPEG(file);
     }
 
-    
-
+    if (typeof define === 'function' && define.amd) {
+        define('exif-js', [], function() {
+            return EXIF;
+        });
+    }
+}.call(this));
 
